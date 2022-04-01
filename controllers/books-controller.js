@@ -31,7 +31,7 @@ const filterAbook = async (req, res, next) => {
 
 const updateBook = async (req, res, next) => {
   const id = req.params.id;
-  const { name, author, description, price, available } = req.body;
+  const { name, author, description, price, available, image } = req.body;
   let book;
   try {
     book = await Book.findByIdAndUpdate(
@@ -40,7 +40,9 @@ const updateBook = async (req, res, next) => {
         name,
         author,
         description,
+        price,
         available,
+        image,
       },
       { new: true }
     );
@@ -57,7 +59,7 @@ const updateBook = async (req, res, next) => {
 
 const addBook = async (req, res, next) => {
   //destructure req.body object
-  const { name, author, description, price, available } = req.body;
+  const { name, author, description, price, available, image } = req.body;
   let book;
   try {
     //will contain a new instance of book shema we built
@@ -71,6 +73,7 @@ const addBook = async (req, res, next) => {
       description,
       price,
       available,
+      image,
     });
 
     await book.save();
