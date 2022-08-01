@@ -21,7 +21,7 @@ app.use(express.json());
 // const bodyParser = require('body-parser')
 // app.use(bodyParser.json())
 
-app.use("/books", router); //http://localhost:5000/
+app.use("/books", router); 
 
 const port = process.env.PORT || 5000;
 app.use(cors());
