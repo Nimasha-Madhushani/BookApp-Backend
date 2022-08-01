@@ -16,7 +16,7 @@ app.use(express.json());
 //convert all data responses/middleware to json
 //and allow to pass the json everywhere through the server
 /* UnhandledPromiseRejectionWarning: TypeError: Cannot destructure property 'name' of 'req.body' as it is undefined.
- me error eka enawa app.use(express.json());use kare natnam*/
+*/
 
 // const bodyParser = require('body-parser')
 // app.use(bodyParser.json())
